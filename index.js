@@ -12,6 +12,14 @@ var blurHandler = function() {
     // Assume the visitor is focused to begin with
 };
 
+var onSuccess = function(data) {
+    console.log(data);
+};
+
+var onError = function(err) {
+    // Do something with the error
+};
+
 lpTag.agentSDK.init({
     notificationCallback: notificationHandler,
     visitorFocusedCallback: focusHandler,
