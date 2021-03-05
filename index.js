@@ -1,7 +1,21 @@
+var notificationHandler = function(data) {
+    // Do something with the notifications
+};
+
+var focusHandler = function() {
+    // Do something when the visitor is focused
+    // Assume the visitor is focused to begin with
+};
+
+var blurHandler = function() {
+    // Do something when the visitor is blurred
+    // Assume the visitor is focused to begin with
+};
+
 lpTag.agentSDK.init({
     notificationCallback: notificationHandler,
-    visitorFOcusedCallback: focusHandler,
-    visitorBlurredCallback: blurHander
+    visitorFocusedCallback: focusHandler,
+    visitorBlurredCallback: blurHandler
 });
 
 var pathToData = "visitorInfo.visitorName";
