@@ -29,6 +29,6 @@ lpTag.agentSDK.init({
 var pathToData = "visitorInfo.visitorName";
 lpTag.agentSDK.get(pathToData, onSuccess, onError);
 
-var cmdName = lpTag.agentSDK.cmdNames.write;
-var data = { text: "hello world"};
-lpTag.agentSDK.command(cmdName, data, notifyWhenDone);
+//var cmdName = lpTag.agentSDK.cmdNames.write;
+//var data = { text: "hello world"};
+//lpTag.agentSDK.command(cmdName, data, notifyWhenDone);
