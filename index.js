@@ -33,7 +33,7 @@ lpTag.agentSDK.init({
     visitorBlurredCallback: blurHandler
 });
 
-var pathToData = "visitorInfo.visitorName";
+var pathToData = "chatTranscript.lines";
 lpTag.agentSDK.get(pathToData, onSuccess, onError);
 
 //var cmdName = lpTag.agentSDK.cmdNames.write;
