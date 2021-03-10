@@ -36,6 +36,40 @@ lpTag.agentSDK.init({
 var pathToData = "chatTranscript.lines";
 lpTag.agentSDK.get(pathToData, onSuccess, onError);
 
+// Structured Content
+
+var notifyWhenDone = function(err) {
+    if (err) {
+        // Do something with the error
+    }
+    // called when the command is completed successfully,
+    // or when the action terminated with an error.
+
+    var cmdName = "Send Notification";
+    var data = {};
+
+    lpTag.agentSDK.command(cmdName, data, notifyWhenDone);
+};
+
+var cmdName = lpTag.agentSDK.cmdNames.writeSC; // = "Write StructuredContent"
+var data = {
+    json: {
+        "type": "text",
+        "text": "product name",
+        "tooltip": "text tooltip",
+        "style": {
+            "bold": true,
+            "size": "large"
+        }
+    },
+    metadata: [	//metadata is optional
+        {"type":"ExternalId","id":"running364"},
+        {"type":"ExternalId","id":"soccer486"}
+    ]
+};
+
+lpTag.agentSDK.command(cmdName, data, notifyWhenDone);
+
 //var cmdName = lpTag.agentSDK.cmdNames.write;
 //var data = { text: "hello world"};
 //lpTag.agentSDK.command(cmdName, data, notifyWhenDone);
