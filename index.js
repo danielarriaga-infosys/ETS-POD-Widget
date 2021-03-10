@@ -18,6 +18,26 @@ var onSuccess = function(data) {
         if (text.includes("?")) {
             // Typical action to be performed when the document is ready:
             document.getElementById("info").innerHTML = text;
+
+            // Structured Content
+            var cmdName = lpTag.agentSDK.cmdNames.writeSC; // = "Write StructuredContent"
+            var data = {
+                json: {
+                    "type": "text",
+                    "text": "product name",
+                    "tooltip": "text tooltip",
+                    "style": {
+                        "bold": true,
+                        "size": "large"
+                    }
+                },
+                metadata: [	//metadata is optional
+                    {"type":"ExternalId","id":"running364"},
+                    {"type":"ExternalId","id":"soccer486"}
+                ]
+};
+
+lpTag.agentSDK.command(cmdName, data, notifyWhenDone);
         }
     }
     console.log(data);
@@ -50,25 +70,6 @@ var notifyWhenDone = function(err) {
 
     lpTag.agentSDK.command(cmdName, data, notifyWhenDone);
 };
-
-var cmdName = lpTag.agentSDK.cmdNames.writeSC; // = "Write StructuredContent"
-var data = {
-    json: {
-        "type": "text",
-        "text": "product name",
-        "tooltip": "text tooltip",
-        "style": {
-            "bold": true,
-            "size": "large"
-        }
-    },
-    metadata: [	//metadata is optional
-        {"type":"ExternalId","id":"running364"},
-        {"type":"ExternalId","id":"soccer486"}
-    ]
-};
-
-lpTag.agentSDK.command(cmdName, data, notifyWhenDone);
 
 //var cmdName = lpTag.agentSDK.cmdNames.write;
 //var data = { text: "hello world"};
