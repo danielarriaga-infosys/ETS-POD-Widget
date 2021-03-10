@@ -15,7 +15,7 @@ var blurHandler = function() {
 var onSuccess = function(data) {
     if (data[data.length - 1].source == 'visitor') {
         var text = data[data.length - 1].text;
-        if (text.contains("?")) {
+        if (text.includes("?")) {
             // Typical action to be performed when the document is ready:
             document.getElementById("info").innerHTML = text;
         }
